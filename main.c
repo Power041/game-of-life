@@ -12,7 +12,7 @@ int main(int argc, int ** argv) {
 
 	for (i = 0; i < MAX_L; i++)
 		for (j = 0; j < MAX_C; j++) {
-			if ((!i && !j) || (!i && j == MAX_C - 1) || (i == MAX_L - 1 && !j) || (i == MAX_L - 1 && j == MAX_C - 1))
+			if ((!i && (!j ||  j == MAX_C - 1)) || (i == MAX_L - 1 && (!j ||  j == MAX_C - 1)))
 				table[i][j] = corner;
 			else 
 				if ( !j || j == MAX_C - 1)
